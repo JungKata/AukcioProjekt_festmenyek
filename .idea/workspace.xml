@@ -69,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663828198578</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Festmenyek:&#10;-konstruktorok letrehozása&#10;-iniciallizálás&#10;-licit fuggveny">
+      <created>1663832721126</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663832721126</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -12,7 +12,7 @@ private int legmagasabbLicit;
 private LocalDateTime legutolsoLicitIdeje;
 private boolean elkelt;
 
-    public Festmenyek(String cim, String festo, String stilus, int licitekSzama, int legmagasabbLicit, LocalDate legutolsoLicitIdeje, boolean elkelt) {
+    public Festmenyek(String cim, String festo, String stilus) {
         this.cim = cim;
         this.festo = festo;
         this.stilus = stilus;
@@ -55,17 +55,39 @@ private boolean elkelt;
 
     public void licit()
     {
-        if (elkelt == true)
+        if (elkelt)
         {
             System.out.println("A festmeny már elkelt");
         }else {
-            if (legmagasabbLicit == 0 ){
+            if (licitekSzama == 0 ){
                 legmagasabbLicit = 100;
-                licitekSzama++;
-            } else if (legmagasabbLicit > 0) {
-                legmagasabbLicit *= 1.10;
-                licitekSzama++;
+                this.licitekSzama = 1;
+                this.legutolsoLicitIdeje = LocalDateTime.now();
+            } else if (licitekSzama > 0) {
+                this.legmagasabbLicit = (int) (legmagasabbLicit * 1.1);
+                this.licitekSzama = licitekSzama + 1;
                 legutolsoLicitIdeje = LocalDateTime.now();
+            }
+        }
+    }
+
+    public void licit(int vegosszeg)
+    {
+        if (elkelt == true)
+        {
+            System.out.println("Festmény elkelt");
+        }else{
+            if (vegosszeg < 10 || vegosszeg >100)
+            {
+                System.out.println("Nem megfelelő a licit érték túl nagy vagy túl alacsony");
+            }else{
+                if (vegosszeg > legmagasabbLicit)
+                {
+                    String c = String.valueOf(vegosszeg);
+                    legmagasabbLicit = vegosszeg;
+                    licitekSzama++;
+                    legutolsoLicitIdeje = LocalDateTime.now();
+                }
             }
         }
     }

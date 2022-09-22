@@ -71,20 +71,20 @@ private boolean elkelt;
         }
     }
 
-    public void licit(int vegosszeg)
+    public void licit(int merek)
     {
         if (elkelt == true)
         {
             System.out.println("Festmény elkelt");
         }else{
-            if (vegosszeg < 10 || vegosszeg >100)
+            if (merek < 10 || merek >100)
             {
                 System.out.println("Nem megfelelő a licit érték túl nagy vagy túl alacsony");
             }else{
-                if (vegosszeg > legmagasabbLicit)
+                if (merek > legmagasabbLicit)
                 {
-                    String c = String.valueOf(vegosszeg);
-                    legmagasabbLicit = vegosszeg;
+                    String c = String.valueOf(merek);
+                    legmagasabbLicit = merek;
                     licitekSzama++;
                     legutolsoLicitIdeje = LocalDateTime.now();
                 }
